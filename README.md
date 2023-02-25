@@ -12,4 +12,6 @@ Here the database(**SQLALCHEMY**) model has ben designed based on **one-to-many*
 - Werkzeug (2.2.2)
 - Flask SQLAlchemy (2.0.3)
 ### To understand better, here is the flow diagram of the endpoints
-![alt text] (https://github.com/NazminJuli/udplatforms_CRUD/blob/b576fd91789ed2281d8c8e71e02d82061df1b01f/API%20flow%20chart.png)
+(https://github.com/NazminJuli/udplatforms_CRUD/blob/b576fd91789ed2281d8c8e71e02d82061df1b01f/API%20flow%20chart.png)
+- Home page URL (localhost:5000/)
+- Search page URL (localhost:5000/search)
