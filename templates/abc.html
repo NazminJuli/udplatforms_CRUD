@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- use get_flaskeg_messages method -->
+{% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  <!-- promt the message with bootstrap styling  -->
+    <div class="alert alert-secondary" role="alert">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+<body>
+<form action="/search", method="POST">
+       <br>Enter Parent First Name *:
+      <input name="firstname" type="firstname" id="firstname" aria-describedby="Userfirstname">
+      </br>
+      <br>Enter Parent Last Name *:
+      <input name="lastname" type="lastname" id="lastname" aria-describedby="Userlastname">
+      </br>
+      <input type="submit", value="submit">
+</form>
+
+</body>
+</html>

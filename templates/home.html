@@ -1,0 +1,48 @@
+<html>
+<body>
+<head>
+<title>Registration</title>
+</head>
+
+<!-- use get_flaskeg_messages method -->
+{% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  <!-- promt the message with bootstrap styling  -->
+    <div class="alert alert-secondary" role="alert">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<form action="/register" method="POST">
+
+      <label>Give Details: </label>
+      <br>First Name *:
+      <input name="firstname" type="firstname" class="form-control" id="firstname" aria-describedby="Userfirstname">
+      </br>
+      <br>Last Name *:
+      <input name="lastname" type="lastname" class="form-control" id="lastname" aria-describedby="Userlastname">
+      </br>
+      <br> Street *:
+      <input name="street" type="street" class="form-control" id="street" aria-describedby="Inputstreet">
+      </br>
+      <br> City *:
+      <input name="city" type="city" class="form-control" id="city" aria-describedby="Inputcity">
+      </br>
+      <br> State *:
+      <input name="state" type="state" class="form-control" id="state" aria-describedby="Inputstate">
+      </br>
+      <br> Zip code *:
+      <input name="zip_code" type="zip_code" class="form-control" id="zip_code" aria-describedby="Inputzip">
+      </br>
+
+<div> <button type="submit", name="btn1", value="save"> save </button> </div>
+    <br></br>
+<div> <button type="submit", name="btn2", value="add_child"> add child </button> </div>
+
+</form>
+</body>
+</html>
+

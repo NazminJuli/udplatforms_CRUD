@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Address</title>
+</head>
+<!-- use get_flaskeg_messages method -->
+{% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  <!-- promt the message with bootstrap styling  -->
+    <div class="alert alert-secondary" role="alert">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+<body>
+<form action="\edit_parent", method="POST">
+      <br>Update Street *:
+      <input name="street" type="street" id="street" aria-describedby="street">
+      </br>
+      <br>Update city:
+      <input name="city" type="city" id="city" aria-describedby="city">
+      </br>
+      <br>Update state:
+      <input name="state" type="state" id="state" aria-describedby="state">
+      </br>
+      <br>Update zip-code:
+      <input name="zip_code" type="zip_code" id="zip_code" aria-describedby="zip_code">
+      </br>
+      <input type="submit", name="btn1", value="UPDATE">
+
+</form>
+</body>
+</html>

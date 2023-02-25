@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+
+<!-- use get_flaskeg_messages method -->
+{% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  <!-- promt the message with bootstrap styling  -->
+    <div class="alert alert-secondary" role="alert">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<body>
+
+
+{%if query_parent_all%}
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip-Code</th>
+
+        <th colspan="2">Children</th>
+    </tr>
+    </thead>
+    <tbody>
+     {%for parent in query_parent_all%}
+        <tr>
+            <td>{{parent.id}}</td>
+            <td>{{parent.firstname}}</td>
+            <td>{{parent.lastname}}</td>
+            <td>{{parent.street}}</td>
+            <td>{{parent.city}}</td>
+            <td>{{parent.state}}</td>
+            <td>{{parent.zip_code}}</td>
+
+            {% for child in query_child %}
+            <td>{{child.child_firstname}}</td>
+            <td>{{child.child_lastname}}</td>
+            <th>, </th>
+            {% endfor %}
+        </tr>
+
+     {% endfor %}
+    </tbody>
+</table>
+    <br></br>
+    <a href="{{url_for('search')}}"> Back... </a>
+    <br></br>
+    <a href="{{url_for('edit_parent')}}">Update  </a>
+    <br></br>
+    <a href="{{url_for('delete')}}">Delete  </a>
+
+{% endif %}
+
+</body>
+</html>
