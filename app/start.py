@@ -200,7 +200,8 @@ def search():
         if firstname1 == '' or lastname1 == '':
             flash("please fill registered firstname and lastname")
             return render_template('abc.html')
-
+        session['name1'] = firstname1
+        session['name2'] = lastname1
         query_parent_id = db.session.query(Parents.id).filter(Parents.firstname.like(firstname1), Parents.lastname.like(lastname1)).scalar()
         if query_parent_id:
             query_parent_all = db.session.query(Parents).filter(Parents.firstname.like(firstname1),Parents.lastname.like(lastname1))
